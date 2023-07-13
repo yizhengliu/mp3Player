@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">mp3Player</string>
+    <string name="playButton">play</string>
+    <string name="stopButton">stop</string>
+    <string name="pauseButton">pause</string>
+    <string name="defaultTime">0:0</string>
+    <string name="time">%1$d:%2$d</string>
+    <string name="lastButton">last</string>
+    <string name="loopButton">loop</string>
+    <string name="nextButton">next</string>
+</resources>

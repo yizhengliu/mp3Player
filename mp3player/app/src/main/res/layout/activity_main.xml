@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/totalTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:onClick="onClickPlay"
+        android:text="@string/playButton"
+        app:icon="@drawable/play_arrow"
+        app:layout_constraintBottom_toTopOf="@id/prev"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPause"
+        android:text="@string/pauseButton"
+        app:icon="@drawable/pause"
+        app:layout_constraintBottom_toTopOf="@id/loop"
+        app:layout_constraintEnd_toStartOf="@+id/stop"
+        app:layout_constraintStart_toEndOf="@id/play" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickStop"
+        android:text="@string/stopButton"
+        app:icon="@drawable/stop"
+        app:layout_constraintBottom_toTopOf="@id/next"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <SeekBar
+        android:id="@+id/currentProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultTime"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentProgress"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultTime"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentProgress"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="nextSong"
+        android:text="@string/nextButton"
+        app:icon="@drawable/skip_next_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lastSong"
+        android:text="@string/lastButton"
+        app:icon="@drawable/skip_previous_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/loop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loopMethodChange"
+        android:text="@string/loopButton"
+        android:drawableLeft="@drawable/loop_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/prev" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
